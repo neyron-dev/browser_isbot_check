@@ -5,6 +5,7 @@
 ## Функциональность
 
 Приложение проверяет следующие параметры:
+
 - Обнаружение ботов (Bot Detection)
 - Спуфинг локации (Location Spoofing)
 - Подозрительный скор (Suspect Score)
@@ -12,18 +13,21 @@
 ## Установка и запуск
 
 1. Клонируйте репозиторий:
+
 ```bash
 git clone <repository-url>
 cd fingerprint-vue-demo
 ```
 
 2. Создайте файл `.env` в корне проекта и добавьте ваши ключи:
+
 ```env
 VITE_FINGERPRINT_API_KEY=your_api_key_here
 VITE_FINGERPRINT_SERVER_KEY=your_server_key_here
 ```
 
 3. Запустите через Docker:
+
 ```bash
 docker-compose up --build
 ```
@@ -35,23 +39,24 @@ docker-compose up --build
 Для локальной разработки:
 
 1. Установите зависимости:
+
 ```bash
 npm install
 ```
 
 2. Запустите dev-сервер:
+
 ```bash
 npm run dev
 ```
 
 ## Результат
 
-Приложение возвращает div id="check# с результатами проверки:
-```
-```
+Приложение возвращает ` div id="check"`  с результатами проверки:
+Когда проверка осуществилась, loaded становится true, а data-is-bot имеет bool значение
 
 ## Требования
 
 - Node.js 18+
 - Docker (опционально)
-- Ключи Fingerprint API (API Key и Server Key) 
+- Ключи Fingerprint API (API Key и Server Key)
