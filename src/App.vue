@@ -1,6 +1,6 @@
 <template>
  
-    <div id="check" :loaded="loaded" :data-is-bot="isBot">{{ result }}</div>
+    <div id="check" :loaded="loaded" :data-is-bot="isBot">{{result}} </div>
  
 </template>
 
@@ -36,14 +36,13 @@ export default {
       const apiData = await response.json();
       this.isBot = (
         apiData?.products?.botd?.data?.bot?.result !== "notDetected" ||
-        apiData?.products?.locationSpoofing?.result !== false ||
+        apiData?.products?.locationSpoofing?.data?.result !== false ||
         (apiData?.products?.suspectScore?.result > 9)
       );
-
       this.result = JSON.stringify(apiData, null, 2);
     } catch (error) {
       console.error('Error:', error);
-      this.isBot = true;
+      this.isBot = false;
       this.result = JSON.stringify({
         error: error.message
       }, null, 2);
