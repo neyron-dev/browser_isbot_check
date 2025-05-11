@@ -1,6 +1,6 @@
 <template>
  
-    <div id="check" :loaded="loaded" :data-is-bot="isBot">{{ isBot }}</div>
+    <div id="check" :loaded="loaded" :data-is-bot="isBot">{{ result }}</div>
  
 </template>
 
@@ -43,7 +43,7 @@ export default {
       this.result = JSON.stringify(apiData, null, 2);
     } catch (error) {
       console.error('Error:', error);
-      this.isBot = false;
+      this.isBot = true;
       this.result = JSON.stringify({
         error: error.message
       }, null, 2);
