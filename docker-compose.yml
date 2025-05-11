@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  fingerprint-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_FINGERPRINT_API_KEY=${VITE_FINGERPRINT_API_KEY}
+        - VITE_FINGERPRINT_SERVER_KEY=${VITE_FINGERPRINT_SERVER_KEY}
+    ports:
+      - "4999:4999"
+    restart: unless-stopped 
