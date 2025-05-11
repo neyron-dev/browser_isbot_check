@@ -35,9 +35,9 @@ export default {
 
       const apiData = await response.json();
       this.isBot = (
-        apiData?.products?.botd?.data?.result !== "notDetected" ||
+        apiData?.products?.botd?.data?.bot?.result !== "notDetected" ||
         apiData?.products?.locationSpoofing?.result !== false ||
-        (apiData?.products?.suspectScore?.result > 1)
+        (apiData?.products?.suspectScore?.result > 9)
       );
 
       this.result = JSON.stringify(apiData, null, 2);
